@@ -32,7 +32,10 @@ class AddTodo extends Component<Props, State> {
           let todo = document.createElement("div");
           todo.className = "toast-wrapper";
           render(
-            <TodoItem date={new Date().toDateString()} todo={res.value} />,
+            <TodoItem
+              date={new Date().toLocaleDateString()}
+              todo={res.value}
+            />,
             todo
           );
           this.props.appendContainer.footerref.current.appendChild(todo);

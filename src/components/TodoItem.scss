@@ -1,22 +1,31 @@
 #todo-item-toast {
   position: relative;
-  width: calc(100% - 5px);
+  width: calc(90% - 5px);
   min-height: 20%;
   background-color: white;
   border: 3px solid green;
   border-width: 0 0 0 5px;
-  margin: 5% 0;
+  margin: 5% calc(5% + 5px);
+  padding: 2em 0;
+  transition: background-color 0.25s ease;
+  &.strike {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
   .content {
     width: calc(100% - 6em);
-    font-size: 1.5em;
+    font-size: 2em;
     margin: 0em;
     word-wrap: break-word;
+  }
+  .content.strike {
+    text-decoration: line-through;
   }
   .date {
     bottom: -0.5em;
   }
   .done,
   .remove {
+    position: relative;
     padding: 0;
     border: none;
     font-size: 1em;
@@ -32,20 +41,32 @@
     }
   }
   .remove {
-    background-color: darken($color: red, $amount: 5);
     &:hover {
-      background-color: lighten($color: red, $amount: 5);
+      background-color: red;
     }
   }
   .done {
     margin-right: 3em;
-    background-color: lighten($color: green, $amount: 10);
     &:hover {
       background-color: green;
     }
+    &::after,
+    &::before {
+      position: absolute;
+      bottom: 2.5%;
+      content: "";
+      width: 1px;
+      height: 95%;
+      background-color: black;
+    }
+    &::after {
+      right: 0;
+    }
+    &::before {
+      left: 0;
+    }
   }
 }
-
 .delete {
   animation: delete 1s ease-in-out forwards;
 }

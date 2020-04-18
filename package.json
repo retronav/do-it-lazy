@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "gh-pages": "^2.2.0",
+    "store": "^2.0.12"
   }
 }
