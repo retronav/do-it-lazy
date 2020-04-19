@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7fdd9230f20bcd3e6ef73923cdaaa20f",
+    "revision": "5fc15f5b617ef800489a080e9899a2ea",
     "url": "/do-it-lazy/index.html"
   },
   {
-    "revision": "4b38d2da0865146e7503",
-    "url": "/do-it-lazy/static/css/main.e8d77a3f.chunk.css"
+    "revision": "dbd3b334f413a97d1107",
+    "url": "/do-it-lazy/static/css/main.fdd92900.chunk.css"
   },
   {
     "revision": "1d0101d978ce39cbfa87",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/do-it-lazy/static/js/2.8f5d235d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4b38d2da0865146e7503",
-    "url": "/do-it-lazy/static/js/main.6763de90.chunk.js"
+    "revision": "dbd3b334f413a97d1107",
+    "url": "/do-it-lazy/static/js/main.a9a5cafd.chunk.js"
   },
   {
     "revision": "047dd0e3b0b36a507020",
