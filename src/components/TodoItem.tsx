@@ -79,6 +79,10 @@ class TodoItem extends Component<Props, State> {
     store.set("todos", updateTodos(todos));
   }
   componentDidMount() {
+    this.wrapper.current.classList.add("greet");
+    setTimeout(() => {
+      this.wrapper.current.classList.remove("greet");
+    }, 1200);
     let todos = store.get("todos");
     let toBePushed = {
       date: this.props.date,

@@ -1,17 +1,26 @@
 #todo-item-toast {
+  box-shadow: -8px -6px 23px -1px #ffffff, 8px 6px 23px -1px #000000;
   position: relative;
   width: calc(90% - 5px);
   min-height: 20%;
-  background-color: white;
+  color: white;
+  background-color: transparent;
   border: 3px solid green;
   border-width: 0 0 0 5px;
   margin: 5% calc(5% + 5px);
   padding: 2em 0;
   transition: background-color 0.25s ease;
+  &.greet {
+    animation: greet 1s ease-in-out forwards;
+  }
+  &.delete {
+    animation: delete 1s ease-in-out forwards;
+  }
   &.strike {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
   }
   .content {
+    padding-left: 1em;
     width: calc(100% - 6em);
     font-size: 2em;
     margin: 0em;
@@ -21,10 +30,13 @@
     text-decoration: line-through;
   }
   .date {
+    padding-left: 2em;
     bottom: -0.5em;
   }
   .done,
   .remove {
+    color: white;
+    background: rgb(48, 48, 48);
     position: relative;
     padding: 0;
     border: none;
@@ -67,16 +79,23 @@
     }
   }
 }
-.delete {
-  animation: delete 1s ease-in-out forwards;
-}
 @keyframes delete {
   0% {
     transform: translate(0);
     opacity: 1;
   }
   100% {
-    transform: translateX(-6em);
+    transform: scale(0.2) translateY(20em) rotateZ(45deg);
     opacity: 0;
+  }
+}
+@keyframes greet {
+  0% {
+    transform: scale(0.2) translateY(-20em) rotateZ(45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translate(0);
+    opacity: 1;
   }
 }

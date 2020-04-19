@@ -34,7 +34,7 @@ class Card extends React.Component<Props, State> {
     };
   }
   componentDidMount() {
-    if (!store.get("todos") || store.get("todos") === []) {
+    if (!store.get("todos") || store.get("todos") === "[]") {
       store.set("todos", []);
     } else {
       let todos = JSON.parse(JSON.stringify(store.get("todos")));
