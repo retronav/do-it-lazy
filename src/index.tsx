@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./index.scss";
 import App from "./App";
 import { DefaultToast, UpdateToast } from "./components/swal-mixins";
 import * as serviceWorker from "./serviceWorker";
-import { SweetAlertResult } from "sweetalert2";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,19 +19,22 @@ serviceWorker.register({
     DefaultToast.fire("You can now use this app when offline.");
   },
   onUpdate: (reg) => {
-    UpdateToast.fire("A newer version is available. Update??").then(
-      (res: SweetAlertResult) => {
-        if (!res.dismiss) {
-          reg
-            .update()
-            .then((_) => {
+    UpdateToast.fire("A newer version is available. Update??").then((res) => {
+      if (!res.dismiss) {
+        /*eslint-disable no-restricted-globals*/
+        self.addEventListener("install", () => {
+          self
+            //@ts-ignore
+            .skipWaiting()
+            .then(() => {
               window.location.reload();
             })
+            //@ts-ignore
             .catch((res) => {
               console.error(`Couldn't update! ${res}`);
             });
-        }
+        });
       }
-    );
+    });
   },
 });

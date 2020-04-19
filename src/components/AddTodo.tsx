@@ -1,5 +1,5 @@
 import React, { Component, ReactNode } from "react";
-import swal from "sweetalert2";
+import swal from "sweetalert2/src/sweetalert2.js";
 import "./AddTodo.scss";
 import TodoItem from "./TodoItem";
 import { render } from "react-dom";
