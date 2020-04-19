@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/do-it-lazy/static/css/main.c518bdec.chunk.css",
-    "main.js": "/do-it-lazy/static/js/main.2c2fe530.chunk.js",
-    "main.js.map": "/do-it-lazy/static/js/main.2c2fe530.chunk.js.map",
+    "main.css": "/do-it-lazy/static/css/main.4d096949.chunk.css",
+    "main.js": "/do-it-lazy/static/js/main.e5b807de.chunk.js",
+    "main.js.map": "/do-it-lazy/static/js/main.e5b807de.chunk.js.map",
     "runtime-main.js": "/do-it-lazy/static/js/runtime-main.d01ac6e4.js",
     "runtime-main.js.map": "/do-it-lazy/static/js/runtime-main.d01ac6e4.js.map",
-    "static/js/2.75c5439b.chunk.js": "/do-it-lazy/static/js/2.75c5439b.chunk.js",
-    "static/js/2.75c5439b.chunk.js.map": "/do-it-lazy/static/js/2.75c5439b.chunk.js.map",
+    "static/js/2.5fd330f4.chunk.js": "/do-it-lazy/static/js/2.5fd330f4.chunk.js",
+    "static/js/2.5fd330f4.chunk.js.map": "/do-it-lazy/static/js/2.5fd330f4.chunk.js.map",
     "index.html": "/do-it-lazy/index.html",
-    "precache-manifest.b1ca9dfc163f469da8613f451c30f0c4.js": "/do-it-lazy/precache-manifest.b1ca9dfc163f469da8613f451c30f0c4.js",
+    "precache-manifest.160d5339da887f0cb42253dbe46568bf.js": "/do-it-lazy/precache-manifest.160d5339da887f0cb42253dbe46568bf.js",
     "service-worker.js": "/do-it-lazy/service-worker.js",
-    "static/css/main.c518bdec.chunk.css.map": "/do-it-lazy/static/css/main.c518bdec.chunk.css.map",
-    "static/js/2.75c5439b.chunk.js.LICENSE.txt": "/do-it-lazy/static/js/2.75c5439b.chunk.js.LICENSE.txt"
+    "static/css/main.4d096949.chunk.css.map": "/do-it-lazy/static/css/main.4d096949.chunk.css.map",
+    "static/js/2.5fd330f4.chunk.js.LICENSE.txt": "/do-it-lazy/static/js/2.5fd330f4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d01ac6e4.js",
-    "static/js/2.75c5439b.chunk.js",
-    "static/css/main.c518bdec.chunk.css",
-    "static/js/main.2c2fe530.chunk.js"
+    "static/js/2.5fd330f4.chunk.js",
+    "static/css/main.4d096949.chunk.css",
+    "static/js/main.e5b807de.chunk.js"
   ]
 }
