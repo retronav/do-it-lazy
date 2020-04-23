@@ -11,14 +11,12 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+
 const options = {
-  onSuccess: () => {
+  onSuccess: (): void => {
     DefaultToast.fire("You can now use this app when offline.");
   },
-  onUpdate: () => {
+  onUpdate: (): void => {
     UpdateToast.fire("A newer version is available. Update??").then((res) => {
       if (!res.dismiss) {
         navigator.serviceWorker
@@ -39,4 +37,4 @@ const options = {
     });
   },
 };
-serviceWorker.register();
+serviceWorker.register(options);

@@ -1,5 +1,6 @@
 @import "~@sweetalert2/theme-dark/dark.scss";
 #add-todo {
+  user-select: none;
   color: white;
   height: 2em;
   width: 2em;
@@ -14,7 +15,28 @@
   box-shadow: 10px 10px 30px -10px rgba(0, 0, 0, 0.75);
   &:focus {
     outline: none;
-    background-color: transparentize($color: white, $amount: 0.5);
-    box-shadow: 10px 10px 66px 13px rgba(0, 0, 0, 0.75);
+  }
+  &:hover::after {
+    opacity: 0.8;
+    width: 2.5em;
+    height: 2.5em;
+  }
+  &:focus::after {
+    opacity: 0.8;
+    width: 2.5em;
+    height: 2.5em;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: #eeeeee28;
+    height: 2em;
+    width: 2em;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    transition: 0.25s ease;
   }
 }

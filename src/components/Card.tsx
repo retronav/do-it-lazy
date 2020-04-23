@@ -58,7 +58,7 @@ class Card extends React.Component<Props, State> {
     return (
       <div id="card">
         <header id="cool-header">
-          <pre id="date">{this.state.date}</pre>
+          <h1 id="date">{this.state.date}</h1>
           <AddTodo appendContainer={this} />
         </header>
         <footer ref={this.footerref}></footer>

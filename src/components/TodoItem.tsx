@@ -1,5 +1,5 @@
 import React, { Component, ReactNode, createRef } from "react";
-import "./TodoItem.scss";
+import "./TodoItem.scss"
 import { LSTodo } from "./Card";
 import store from "store";
 interface Props {
@@ -23,6 +23,8 @@ class TodoItem extends Component<Props, State> {
     this.handleRemove = this.handleRemove.bind(this);
     this.contentwrap = createRef();
     this.wrapper = createRef();
+    this.donebtn = createRef();
+    this.removebtn = createRef();
     document.addEventListener("DOMContentLoaded", () => {
       if (this.props.done) {
         this.handleDone();

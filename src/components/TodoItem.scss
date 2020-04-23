@@ -1,3 +1,35 @@
+@mixin afterize($bgcolor, $content) {
+  content: $content;
+  display: flex;
+  align-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 0%;
+  width: 0%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $bgcolor;
+  border-radius: 100%;
+  opacity: 0;
+}
+@keyframes reveal-afterize {
+  from {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-radius: 100%;
+  }
+  to {
+    opacity: 1;
+    width: calc(100% - 2px);
+    height: 100%;
+    border-radius: 0;
+  }
+}
 #todo-item-toast {
   box-shadow: -8px -6px 23px -1px #464646, 8px 6px 23px -1px #000000;
   position: relative;
@@ -11,15 +43,16 @@
   padding: 2em 0;
   transition: background-color 0.25s ease;
   &.greet {
-    animation: greet 1s ease-in-out forwards;
+    animation: greet 0.75s ease-in-out forwards;
   }
   &.delete {
-    animation: delete 1s ease-in-out forwards;
+    animation: delete 0.75s ease-in-out forwards;
   }
   &.strike {
     background-color: rgba(255, 255, 255, 0.2);
   }
   .content {
+    font-weight: lighter;
     padding-left: 1em;
     width: calc(100% - 6em);
     font-size: 2em;
@@ -40,7 +73,7 @@
     position: relative;
     padding: 0;
     border: none;
-    font-size: 1em;
+    font-size: 1.5em;
     position: absolute;
     top: 0;
     right: 0;
@@ -53,16 +86,30 @@
     }
   }
   .remove {
-    &:hover {
-      background-color: red;
+    &::before {
+      left: 0;
+      position: absolute;
+      bottom: 2.5%;
+      content: "";
+      width: 1px;
+      height: 95%;
+      background-color: white;
+    }
+    &::after {
+      @include afterize(red, "✕");
+    }
+    &:hover::after {
+      animation: reveal-afterize 0.25s ease-in-out forwards;
     }
   }
   .done {
     margin-right: 3em;
-    &:hover {
-      background-color: green;
+    &::after {
+      @include afterize(green, "✓");
     }
-    &::after,
+    &:hover::after {
+      animation: reveal-afterize 0.25s ease-in-out forwards;
+    }
     &::before {
       position: absolute;
       bottom: 2.5%;
@@ -85,17 +132,20 @@
     opacity: 1;
   }
   100% {
-    transform: scale(0.2) translateY(20em) rotateZ(45deg);
+    transform: scale(0.2) translateY(20em);
     opacity: 0;
   }
 }
 @keyframes greet {
   0% {
-    transform: scale(0.2) translateY(-20em) rotateZ(45deg);
+    transform: scale(0.2) translateY(-20em);
     opacity: 0;
   }
-  100% {
+  90% {
     transform: scale(1) translate(0);
     opacity: 1;
+  }
+  95% {
+    transform: scale(1) translate(0);
   }
 }
